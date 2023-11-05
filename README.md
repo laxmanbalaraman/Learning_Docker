@@ -44,3 +44,15 @@ first prune containers and then prune images and some containers can use come da
 you can share images in [hub.docker.com](https://hub.docker.com)
 
 when you push an images all the layers contained with the image are push, however if you push a modified image, only those modified layers and following layers are pushed, makeing the push process faster.
+
+**Port Mapping**
+
+Host machine and container are isolated, so inorder to use the service of container, port mapping is done.
+It involves mapping a port on the host machine to a port within the container, allowing external or other containers to communicate with services running inside the container through the host's IP address and a specific port number.
+
+The EXPOSE instruction in a Dockerfile is used to document the network ports that a container listens on. It doesn't actually publish or open any ports; it's a metadata declaration that provides information to users about which ports are intended to be used for network communication with the container.
+
+**Persisting data in container**
+
+Data in conatainer are volatile meaning once the container is deleted, the container data is lost. Hence comes volume to the rescue,
+In Docker, a volume is a mechanism for persisting data outside of the container's filesystem. Volumes provide a way to store and share data between containers and the host machine, and they are a key feature for managing data in containerized applications.
